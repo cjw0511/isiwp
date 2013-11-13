@@ -1,0 +1,16 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/AjaxPage.Master" AutoEventWireup="true" CodeBehind="InnerAjaxPageForm.master.cs" Inherits="ISIWP.Platform.WebClient.InnerAjaxPageForm" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentHead" runat="server">
+    <asp:ContentPlaceHolder ID="ContentHead" runat="server" />
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentBody" runat="server">
+    <div id="<%= this.AjaxContainerID %>" class="easyui-layout" data-options="border: false, fit: true">
+        <div data-options="region: 'north', border: false" style="overflow: hidden;">
+            <div class="datagrid-toolbar">
+                <asp:ContentPlaceHolder ID="ContentToolBar" runat="server" />
+            </div>
+        </div>
+        <div id="containerPanel" data-options="region: 'center', border: false">
+            <asp:ContentPlaceHolder ID="ContentBody" runat="server" />
+        </div>
+    </div>
+</asp:Content>

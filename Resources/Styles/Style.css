@@ -1,0 +1,155 @@
+﻿body
+{
+    font-size: 12px;
+}
+
+legend
+{
+    font-weight: 600;
+}
+
+.div_center
+{
+    margin:5px 10px 5px 10px;
+}
+
+.tablecss tr
+{
+    height:30px;
+}
+
+.table_td_left
+{
+    text-align:right;
+    width:120px;
+}
+.table_td_right
+{
+    text-align:left;
+    width:300px;
+}
+.gray
+{
+    color:Gray;
+}
+
+input[type="text"],input[type="password"]
+{
+    border:1px solid #B5B8C8;
+    height: 19px;
+    width:200px;
+}
+
+textarea
+{
+    border:1px solid #B5B8C8;
+    overflow:auto;
+    width:620px;
+}
+input[type="text"]:hover,input[type="password"]:hover,textarea:hover
+{
+    border:1px solid #60C8FD;
+}
+input[type="text"]:focus,input[type="password"]:focus,textarea:focus
+{
+    border:1px solid #60C8FD;
+}
+
+input.pagination-num
+{
+    width: auto;
+}
+input.calendar-menu-year
+{
+    width: 40px;
+}
+select
+{
+    width:203px;
+}
+select.pagination-page-list
+{
+    width: auto;
+}
+input.combo-text[type="text"]:hover
+{
+    border: 0;
+}
+input.combo-text[type="text"]:focus
+{
+    border: 0;
+}
+input.spinner-text[type="text"]:hover
+{
+    border: 0;
+}
+input.spinner-text[type="text"]:focus
+{
+    border: 0;
+}
+
+input.searchbox-text
+{
+    width:183px;
+    border: 0;
+}
+
+input.searchbox-text[type="text"]:hover
+{
+    border: 0;
+}
+
+input.searchbox-text[type="text"]:focus
+{
+    border: 0;
+}
+
+.base-select-button{
+	background-position:center center;
+}
+
+.required
+{
+    color:Red;
+}
+
+span.combo
+{
+    border:1px solid #B5B8C8;
+}
+
+span.combo:hover
+{
+    border:1px solid #60C8FD;
+}
+
+span.searchbox
+{
+    border:1px solid #B5B8C8;
+}
+
+span.searchbox:hover
+{
+    border:1px solid #60C8FD;
+}
+
+.tabs-tool
+{
+    border-right-width: 0px;
+}
+
+.datagrid-toolbar
+{
+    overflow: hidden;
+}
+
+.shine
+{
+    filter: alpha(opacity=60);
+    opacity: 0.6;
+}
+
+input.cke_dialog_ui_input_text
+{
+    height:auto;
+}

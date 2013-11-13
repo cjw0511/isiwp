@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>jeasyui-jdirk-tabs-demo</title>
+    <link href="../../Resources/Plugins/jquery-easyui-1.3.3/themes/default/easyui.css" rel="stylesheet" type="text/css" />
+    <link href="../../Resources/Plugins/jquery-easyui-1.3.3/themes/icon.css" rel="stylesheet" type="text/css" />
+    <link href="../../Resources/Scripts/Common/jquery-easyui-plugins/jquery-easyui-extensions/icons/icon-all.css" rel="stylesheet" type="text/css" />
+
+    <script src="../../Resources/Plugins/jquery/jquery-1.9.1.js" type="text/javascript"></script>
+    <script src="../../Resources/Plugins/jquery-easyui-1.3.3/jquery.easyui.min.js" type="text/javascript"></script>
+    <script src="../../Resources/Plugins/jquery-easyui-1.3.3/locale/easyui-lang-zh_CN.js" type="text/javascript"></script>
+
+    <script src="../../Resources/Scripts/Common/jquery-easyui-plugins/jquery.jdirk.js" type="text/javascript"></script>
+    <script src="../../Resources/Scripts/Common/jquery-easyui-plugins/jquery-easyui-extensions/jeasyui.extensions.js" type="text/javascript"></script>
+    <script src="../../Resources/Scripts/Common/jquery-easyui-plugins/jquery-easyui-extensions/jeasyui.extensions.validatebox.js" type="text/javascript"></script>
+    <script src="../../Resources/Scripts/Common/jquery-easyui-plugins/jquery-easyui-extensions/jeasyui.extensions.menu.js" type="text/javascript"></script>
+    <script src="../../Resources/Scripts/Common/jquery-easyui-plugins/jquery-easyui-extensions/jeasyui.extensions.panel.js" type="text/javascript"></script>
+    <script src="../../Resources/Scripts/Common/jquery-easyui-plugins/jquery-easyui-extensions/jeasyui.extensions.window.js" type="text/javascript"></script>
+    <script src="../../Resources/Scripts/Common/jquery-easyui-plugins/jquery-easyui-extensions/jeasyui.extensions.dialog.js" type="text/javascript"></script>
+    <script src="../../Resources/Scripts/Common/jquery-easyui-plugins/jquery-easyui-extensions/jeasyui.extensions.tabs.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $("#t1").tabs({
+                border: false, fit: true, showOption: true,
+                contextMenu: [
+                    { text: "mm1", iconCls: "icon-ok", handler: function (e, title, index) { alert(index); } },
+                    { text: "mm2", iconCls: "icon-cancel", handler: function (e, title, index) { alert(title); } }
+                ]
+            });
+
+            $("#Button1").click(function () { $("#t1").tabs("showOption", 1); });
+
+            $("#Button2").click(function () { $("#t1").tabs("newTab"); });
+
+            $("#Button3").click(function () { $("#t1").tabs("repeat", 0); });
+
+            $("#Button4").click(function () { alert($("#t1").tabs("leftTabs", 2).length); });
+
+            $("#Button5").click(function () { alert($("#t1").tabs("rightTabs", 1).length); });
+
+            $("#Button6").click(function () { alert($("#t1").tabs("otherTabs", 1).length); });
+
+            $("#Button7").click(function () { alert($("#t1").tabs("closableTabs").length); });
+
+            $("#Button8").click(function () { alert($("#t1").tabs("leftClosableTabs", 1).length); });
+
+            $("#Button9").click(function () { alert($("#t1").tabs("rightClosableTabs", 1).length); });
+
+            $("#Button10").click(function () { alert($("#t1").tabs("otherClosableTabs", 1).length); });
+
+            $("#Button11").click(function () { $("#t1").tabs("closeLeft", 1); });
+
+            $("#Button12").click(function () { $("#t1").tabs("closeRight", 1); });
+
+            $("#Button13").click(function () { $("#t1").tabs("closeOther", 1); });
+
+            $("#Button14").click(function () { $("#t1").tabs("closeAll"); });
+
+            $("#Button15").click(function () { $("#t1").tabs("closeClosable", 3); });
+
+            $("#Button16").click(function () { $("#t1").tabs("closeLeftClosable", 3); });
+
+            $("#Button17").click(function () { $("#t1").tabs("closeRightClosable", 3); });
+
+            $("#Button18").click(function () { $("#t1").tabs("closeOtherClosable", 3); });
+
+            $("#Button19").click(function () { $("#t1").tabs("closeAllClosable"); });
+
+            $("#Button20").click(function () {
+                $("#t1").tabs("move", { source: 1, target: 4, point: "before" });
+            });
+
+            var i = 0;
+            $("#Button21").click(function () { $("#t1").tabs("insert", { title: "testTab" + i++, target: 2, closable: true, iconCls: "icon-save" }); });
+
+            $("#Button22").click(function () {
+                $("#win1").window({ draggable: true });
+            });
+        });
+    </script>
+</head>
+<body class="easyui-layout" data-options="fit: true" style="padding: 0px; margin: 0px;">
+    <div data-options="region: 'north', title: 'north', split: true, collapsible: true, minHeight: 100" style="height: 100px;">
+        <input id="Button1" type="button" value="ShowOptions" />
+        <input id="Button2" type="button" value="NewTab" />
+        <input id="Button3" type="button" value="RepeatTab" />
+        <input id="Button4" type="button" value="GetLeftTabs" />
+        <input id="Button5" type="button" value="GetLeftTabs" />
+        <input id="Button6" type="button" value="GetOtherTabs" />
+        <input id="Button7" type="button" value="GetClosableTabs" />
+        <input id="Button8" type="button" value="LeftClosableTabs" />
+        <input id="Button9" type="button" value="RightClosableTabs" />
+        <input id="Button10" type="button" value="OtherClosableTabs" />
+        <input id="Button11" type="button" value="CloseLeft" />
+        <input id="Button12" type="button" value="CloseRight" />
+        <input id="Button13" type="button" value="CloseOther" /><hr />
+        <input id="Button14" type="button" value="closeAll" />
+        <input id="Button15" type="button" value="closeClosableTab" />
+        <input id="Button16" type="button" value="closeLeftClosable" />
+        <input id="Button17" type="button" value="closeRightClosable" />
+        <input id="Button18" type="button" value="closeOtherClosable" />
+        <input id="Button19" type="button" value="closeAllClosable" />
+        <input id="Button20" type="button" value="moveTab" />
+        <input id="Button21" type="button" value="insertTab" />
+        <input id="Button22" type="button" value="AddTab" />
+    </div>
+    <div data-options="region: 'west', title: 'west', split: true, collapsible: true, minWidth: 200" style="width: 200px;"></div>
+    <div data-options="region: 'center', title: 'center'">
+        <!--<div id="win1" class="easyui-window" data-options="width: 150, height: 150, draggable: false, inline: true"></div>-->
+        <div id="t1">
+            <div data-options="title: 'tab1', closable: true, refreshable: true, iniframe: false, href: 'jeasyui-jdirk-dialog-demo2.aspx'"></div>
+            <div data-options="title: 'tab2', closable: true, refreshable: false">22</div>
+            <div data-options="title: 'tab3', closable: false, refreshable: true">33</div>
+            <div data-options="title: 'tab4', closable: true, refreshable: false">44</div>
+            <div data-options="title: 'tab5', closable: false, refreshable: true">55</div>
+            <div data-options="title: 'tab6', closable: true, refreshable: false">66</div>
+            <div data-options="title: 'tab7', closable: false, refreshable: true">77</div>
+        </div>
+    </div>
+    <div data-options="region: 'east', title: 'east', split: true, collapsible: true, minWidth: 100" style="width: 200px;">
+    </div>
+    <div data-options="region: 'south', title: 'south', split: true, collapsible: true, minHeight: 100" style="height: 100px;"></div>
+</body>
+</html>

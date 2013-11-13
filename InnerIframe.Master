@@ -1,0 +1,10 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/ValidateLoginStatus.Master" AutoEventWireup="true" CodeBehind="InnerIframe.master.cs" Inherits="ISIWP.Platform.WebClient.InnerIframe" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentFeatured" runat="server">
+    <asp:ContentPlaceHolder ID="ContentFeatured" runat="server" />
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentHead" runat="server">
+    <asp:ContentPlaceHolder ID="ContentHead" runat="server" />
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentBody" runat="server">
+    <asp:ContentPlaceHolder ID="ContentBody" runat="server" />
+</asp:Content>

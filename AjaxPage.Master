@@ -1,0 +1,4 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AjaxPage.master.cs" Inherits="ISIWP.Platform.WebClient.AjaxPage" %>
+
+<asp:ContentPlaceHolder ID="ContentHead" runat="server" />
+<asp:ContentPlaceHolder ID="ContentBody" runat="server" />

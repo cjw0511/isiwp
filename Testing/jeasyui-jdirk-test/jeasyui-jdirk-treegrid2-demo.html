@@ -1,0 +1,297 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>jeasyui-jdirk-treegrid-demo</title>
+    <link href="../../Resources/Plugins/jquery-easyui-1.3.3/themes/default/easyui.css" rel="stylesheet" type="text/css" />
+    <link href="../../Resources/Plugins/jquery-easyui-1.3.3/themes/icon.css" rel="stylesheet" type="text/css" />
+    <link href="../../Resources/Scripts/Common/jquery-easyui-plugins/jquery-easyui-extensions/icons/icon-all.css" rel="stylesheet" type="text/css" />
+
+    <script src="../../Resources/Plugins/jquery/jquery-1.9.1.js" type="text/javascript"></script>
+    <script src="../../Resources/Plugins/jquery-easyui-1.3.3/jquery.easyui.min.js" type="text/javascript"></script>
+    <script src="../../Resources/Plugins/jquery-easyui-1.3.3/locale/easyui-lang-zh_CN.js" type="text/javascript"></script>
+
+    <script src="../../Resources/Scripts/Common/jquery-easyui-plugins/jquery.jdirk.js" type="text/javascript"></script>
+    <script src="../../Resources/Scripts/Common/jquery-easyui-plugins/jquery-easyui-extensions/jeasyui.extensions.js" type="text/javascript"></script>
+    <script src="../../Resources/Scripts/Common/jquery-easyui-plugins/jquery-easyui-extensions/jeasyui.extensions.menu.js" type="text/javascript"></script>
+    <script src="../../Resources/Scripts/Common/jquery-easyui-plugins/jquery-easyui-extensions/jeasyui.extensions.tree.js" type="text/javascript"></script>
+    <script src="../../Resources/Scripts/Common/jquery-easyui-plugins/jquery-easyui-extensions/jeasyui.extensions.datagrid.js" type="text/javascript"></script>
+    <script src="../../Resources/Scripts/Common/jquery-easyui-plugins/jquery-easyui-extensions/jeasyui.extensions.treegrid.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            var columnFilter = {
+                panelHeight: 100,
+                position: "top"
+            };
+            //var data = [{ ID: 1, Code: 1, Name: "汤小祥", Age: 45, Height: 141, Weight: 60.67, CreateDate: "2007-03-28" }, { ID: 2, Code: 2, Name: "况文娟", Age: 63, Height: 146, Weight: 72.82, CreateDate: "2006-04-16" }, { ID: 3, Code: 3, Name: "李洪敏", Age: 60, Height: 187, Weight: 51.66, CreateDate: "2004-04-04" }, { ID: 4, Code: 4, Name: "彭成华", Age: 59, Height: 164, Weight: 73.50, CreateDate: "2005-10-12" }, { ID: 5, Code: 5, Name: "余梦恬", Age: 31, Height: 180, Weight: 72.61, CreateDate: "2003-03-16" }, { ID: 6, Code: 6, Name: "陈文斌", Age: 42, Height: 169, Weight: 71.85, CreateDate: "2008-09-25" }, { ID: 7, Code: 7, Name: "叶俊兰", Age: 24, Height: 192, Weight: 66.09, CreateDate: "2004-02-10" }, { ID: 8, Code: 8, Name: "武红梅", Age: 23, Height: 153, Weight: 73.95, CreateDate: "2009-04-25" }, { ID: 9, Code: 9, Name: "曾小莉", Age: 34, Height: 190, Weight: 47.28, CreateDate: "2005-12-18" }, { ID: 10, Code: 10, Name: "刘清", Age: 33, Height: 179, Weight: 53.40, CreateDate: "2006-12-29" }, { ID: 11, Code: 11, Name: "杨文乐", Age: 25, Height: 180, Weight: 71.78, CreateDate: "2001-01-13" }, { ID: 12, Code: 12, Name: "简立娟", Age: 64, Height: 153, Weight: 50.64, CreateDate: "2004-12-07" }, { ID: 13, Code: 13, Name: "丁海林", Age: 20, Height: 158, Weight: 60.48, CreateDate: "2008-05-13" }, { ID: 14, Code: 14, Name: "胡金路", Age: 18, Height: 182, Weight: 56.41, CreateDate: "2010-10-06" }, { ID: 15, Code: 15, Name: "虞洪生", Age: 59, Height: 166, Weight: 51.85, CreateDate: "2010-08-27" }, { ID: 16, Code: 16, Name: "郭柏梅", Age: 28, Height: 182, Weight: 72.84, CreateDate: "2008-01-22" }, { ID: 17, Code: 17, Name: "蔡显智　", Age: 35, Height: 174, Weight: 47.90, CreateDate: "2008-08-30" }, { ID: 18, Code: 18, Name: "范志强", Age: 27, Height: 149, Weight: 48.04, CreateDate: "2005-04-02" }, { ID: 19, Code: 19, Name: "范琴", Age: 24, Height: 170, Weight: 51.69, CreateDate: "2006-10-08" }, { ID: 20, Code: 20, Name: "颜辉辉", Age: 22, Height: 144, Weight: 40.15, CreateDate: "2006-08-03" }, { ID: 21, Code: 21, Name: "马远江", Age: 55, Height: 197, Weight: 41.03, CreateDate: "2010-07-27" }, { ID: 22, Code: 22, Name: "徐衍雄", Age: 45, Height: 163, Weight: 47.43, CreateDate: "2007-04-22" }, { ID: 23, Code: 23, Name: "肖璧", Age: 54, Height: 142, Weight: 57.44, CreateDate: "2004-05-24" }, { ID: 24, Code: 24, Name: "刘羚", Age: 46, Height: 150, Weight: 73.83, CreateDate: "2002-02-02" }, { ID: 25, Code: 25, Name: "李骏", Age: 29, Height: 163, Weight: 77.08, CreateDate: "2010-10-19" }, { ID: 26, Code: 26, Name: "谢蔷薇", Age: 21, Height: 145, Weight: 63.72, CreateDate: "2003-11-10" }, { ID: 27, Code: 27, Name: "汪洋", Age: 57, Height: 140, Weight: 64.88, CreateDate: "2005-06-24" }, { ID: 28, Code: 28, Name: "胡小平", Age: 38, Height: 170, Weight: 70.55, CreateDate: "2007-06-26" }, { ID: 29, Code: 29, Name: "龙文芳", Age: 15, Height: 189, Weight: 49.86, CreateDate: "2010-07-02" }, { ID: 30, Code: 30, Name: "刘盛", Age: 62, Height: 183, Weight: 78.23, CreateDate: "2007-02-18" }, { ID: 31, Code: 31, Name: "徐　飞", Age: 58, Height: 150, Weight: 58.45, CreateDate: "2002-11-28" }, { ID: 32, Code: 32, Name: "施珍峰", Age: 39, Height: 195, Weight: 46.63, CreateDate: "2008-01-19" }, { ID: 33, Code: 33, Name: "谢观发", Age: 26, Height: 178, Weight: 63.44, CreateDate: "2007-09-23" }, { ID: 34, Code: 34, Name: "涂凯", Age: 48, Height: 172, Weight: 56.08, CreateDate: "2006-12-06" }, { ID: 35, Code: 35, Name: "游伟伟", Age: 63, Height: 187, Weight: 64.29, CreateDate: "2008-06-29" }, { ID: 36, Code: 36, Name: "谌明", Age: 20, Height: 153, Weight: 66.66, CreateDate: "2007-04-05" }, { ID: 37, Code: 37, Name: "封涛", Age: 62, Height: 140, Weight: 47.85, CreateDate: "2001-12-31" }, { ID: 38, Code: 38, Name: "刘宁", Age: 26, Height: 154, Weight: 59.12, CreateDate: "2010-09-29" }, { ID: 39, Code: 39, Name: "曾苏", Age: 27, Height: 147, Weight: 63.35, CreateDate: "2006-08-23" }, { ID: 40, Code: 40, Name: "程靓", Age: 60, Height: 169, Weight: 64.38, CreateDate: "2002-06-27" }, { ID: 41, Code: 41, Name: "李巧玲", Age: 45, Height: 179, Weight: 52.20, CreateDate: "2009-03-18" }, { ID: 42, Code: 42, Name: "辜锋", Age: 50, Height: 142, Weight: 69.27, CreateDate: "2003-11-11" }, { ID: 43, Code: 43, Name: "郭晓林", Age: 50, Height: 151, Weight: 57.86, CreateDate: "2009-09-23" }, { ID: 44, Code: 44, Name: "许力威", Age: 35, Height: 148, Weight: 70.32, CreateDate: "2005-05-27" }, { ID: 45, Code: 45, Name: "王洋", Age: 38, Height: 186, Weight: 58.77, CreateDate: "2003-12-27" }, { ID: 46, Code: 46, Name: "李建钢", Age: 21, Height: 174, Weight: 45.03, CreateDate: "2005-11-16" }, { ID: 47, Code: 47, Name: "陈星延", Age: 63, Height: 146, Weight: 65.77, CreateDate: "2005-02-03" }, { ID: 48, Code: 48, Name: "李肖姗", Age: 28, Height: 192, Weight: 77.91, CreateDate: "2008-03-08" }, { ID: 49, Code: 49, Name: "于凤丽", Age: 38, Height: 163, Weight: 49.38, CreateDate: "2004-12-07" }, { ID: 50, Code: 50, Name: "缪金生", Age: 39, Height: 146, Weight: 79.06, CreateDate: "2001-01-01"}];
+            //var data = [{ "id": 1, "name": "C", checkbox: true, "size": "", "date": "02/19/2010", "children": [{ "id": 2, "name": "Program Files", "size": "120 MB", "date": "03/20/2010", "children": [{ "id": 21, "name": "Java", "size": "", "date": "01/13/2010", "state": "closed", "children": [{ "id": 211, "name": "java.exe", "size": "142 KB", "date": "01/13/2010" }, { "id": 212, "name": "jawt.dll", "size": "5 KB", "date": "01/13/2010"}] }, { "id": 22, "name": "MySQL", "size": "", "date": "01/13/2010", "state": "closed", "children": [{ "id": 221, "name": "my.ini", "size": "10 KB", "date": "02/26/2009" }, { "id": 222, "name": "my-huge.ini", "size": "5 KB", "date": "02/26/2009" }, { "id": 223, "name": "my-large.ini", "size": "5 KB", "date": "02/26/2009"}]}] }, { "id": 3, "name": "eclipse", "size": "", "date": "01/20/2010", "children": [{ "id": 31, "name": "eclipse.exe", "size": "56 KB", "date": "05/19/2009" }, { "id": 32, "name": "eclipse.ini", "size": "1 KB", "date": "04/20/2010" }, { "id": 33, "name": "notice.html", "size": "7 KB", "date": "03/17/2005"}]}]}];
+            //            var data = [{ "id": 1, "name": "A", "age": 6, "weight": 11.2, "size": "", "date": "02/19/2010", "children": [{ "id": 11, "name": "Program Files", "age": 3, "weight": 14.2, "size": "120 MB", "date": "03/20/2010", "pid": 1, "children": [{ "id": 111, "name": "Java", "age": 9, "weight": 21.2, "size": "120 MB", "date": "01/13/2010", "pid": 11, "children": [{ "id": 1111, "name": "java.exe", "age": 3, "weight": 21.1, "size": "142 kb", "date": "01/13/2010", "pid": 111, "state": "open" }, { "id": 1112, "name": "jawt.dll", "age": 11, "weight": 22, "size": "5 kb", "date": "01/13/2010", "pid": 111, "state": "open"}], "state": "open" }, { "id": 112, "name": "MySQL", "age": 6, "weight": 11.2, "size": "120 MB", "date": "01/13/2010", "pid": 11, "children": [{ "id": 1121, "name": "my.ini", "age": 6, "weight": 11.2, "size": "10 kb", "date": "02/26/2009", "pid": 112, "state": "open" }, { "id": 1122, "name": "my-huge.ini", "age": 6, "weight": 11.2, "size": "5 kb", "date": "02/26/2009", "pid": 112, "state": "open" }, { "id": 1123, "name": "my-large.ini", "age": 6, "weight": 11.2, "size": "5 kb", "date": "02/26/2009", "pid": 112, "state": "open"}], "state": "open"}], "state": "open" }, { "id": 12, "name": "Eclipse", "size": "", "date": "01/20/2010", "pid": 1, "children": [{ "id": 121, "name": "eclipse.exe", "size": "56 kb", "date": "05/19/2009", "pid": 12, "state": "open" }, { "id": 123, "name": "eclipse.ini", "size": "1 kb", "date": "04/20/2010", "pid": 12, "state": "open" }, { "id": 124, "name": "notice.html", "size": "7 kb", "date": "03/17/2005", "pid": 12, "state": "open"}], "state": "open"}], "state": "open" }, { "id": 2, "name": "B", "age": 13, "weight": 21.1, "size": "", "date": "02/19/2010", "children": [{ "id": 21, "name": "B1", "age": 13, "weight": 21.1, "size": "", "date": "02/19/2010", "pid": 2, "state": "open" }, { "id": 22, "name": "B2", "age": 13, "weight": 21.1, "size": "", "date": "02/19/2010", "pid": 2, "state": "open" }, { "id": 23, "name": "B3", "age": 13, "weight": 21.1, "size": "", "date": "02/19/2010", "pid": 2, "state": "open"}], "state": "open" }, { "id": 3, "name": "C", "age": 11, "weight": 31.1, "size": "", "date": "02/19/2010", "state": "open" }, { "id": 4, "name": "D", "age": 31, "weight": 33, "size": "", "date": "02/19/2010", "state": "open" }, { "id": 5, "name": "E", "age": 22, "weight": 11, "size": "", "date": "02/19/2010", "state": "open" }, { "id": 6, "name": "F", "age": 8, "weight": 14.8, "size": "", "date": "02/19/2010", "state": "open" }, { "id": 7, "name": "G", "age": 11, "weight": 22, "size": "", "date": "02/19/2010", "state": "open" }, { "id": 8, "name": "H", "age": 11, "weight": 22, "size": "", "date": "02/19/2010", "state": "open" }, { "id": 9, "name": "I", "age": 11, "weight": 22, "size": "", "date": "02/19/2010", "state": "open" }, { "id": 10, "name": "J", "size": "", "date": "02/19/2010", "state": "open" }, { "id": 101, "name": "L", "size": "", "date": "02/19/2010", "state": "open" }, { "id": 102, "name": "M", "size": "", "date": "02/19/2010", "state": "open" }, { "id": 103, "name": "N", "size": "", "date": "02/19/2010", "state": "open" }, { "id": 104, "name": "O", "size": "", "date": "02/19/2010", "state": "open" }, { "id": 105, "name": "P", "size": "", "date": "02/19/2010", "state": "open" }, { "id": 106, "name": "Q", "size": "", "date": "02/19/2010", "state": "open" }, { "id": 107, "name": "R", "size": "", "date": "02/19/2010", "state": "open"}];
+            var data = [
+                { "id": 1, "name": "A", "age": 6, weight: 11.2, "size": "", "date": "02/19/2010" },
+                { "id": 11, "name": "Program Files", "age": 3, weight: 14.2, "size": "120 MB", "date": "03/20/2010", pid: 1 },
+                { "id": 111, "name": "Java", "age": 9, weight: 21.2, "size": "120 MB", "date": "01/13/2010", state: "closed", pid: 11 },
+                { "id": 1111, "name": "java.exe", "age": 3, weight: 21.1, "size": "142 kb", "date": "01/13/2010", pid: 111 },
+                { "id": 1112, "name": "jawt.dll", "age": 11, weight: 22, "size": "5 kb", "date": "01/13/2010", pid: 111 },
+
+                { "id": 112, "name": "MySQL", "age": 6, weight: 11.2, "size": "120 MB", "date": "01/13/2010", state: "closed", pid: 11 },
+                { "id": 1121, "name": "my.ini", "age": 6, weight: 11.2, "size": "10 kb", "date": "02/26/2009", pid: 112 },
+                { "id": 1122, "name": "my-huge.ini", "age": 6, weight: 11.2, "size": "5 kb", "date": "02/26/2009", pid: 112 },
+                { "id": 1123, "name": "my-large.ini", "age": 6, weight: 11.2, "size": "5 kb", "date": "02/26/2009", pid: 112 },
+
+                { "id": 12, "name": "Eclipse", "size": "", "date": "01/20/2010", pid: 1 },
+                { "id": 121, "name": "eclipse.exe", "size": "56 kb", "date": "05/19/2009", pid: 12 },
+                { "id": 123, "name": "eclipse.ini", "size": "1 kb", "date": "04/20/2010", pid: 12 },
+                { "id": 124, "name": "notice.html", "size": "7 kb", "date": "03/17/2005", pid: 12 },
+
+                { "id": 2, "name": "B", "age": 13, weight: 21.1, "size": "", "date": "02/19/2010" },
+                { "id": 21, "name": "B1", "age": 13, weight: 21.1, "size": "", "date": "02/19/2010", pid: 2 },
+                { "id": 22, "name": "B2", "age": 13, weight: 21.1, "size": "", "date": "02/19/2010", pid: 2 },
+                { "id": 23, "name": "B3", "age": 13, weight: 21.1, "size": "", "date": "02/19/2010", pid: 2 },
+
+
+                { "id": 3, "name": "C", "age": 11, weight: 31.1, "size": "", "date": "02/19/2010" },
+                { "id": 4, "name": "D", "age": 31, weight: 33, "size": "", "date": "02/19/2010" },
+                { "id": 5, "name": "E", "age": 22, weight: 11, "size": "", "date": "02/19/2010" },
+                { "id": 6, "name": "F", "age": 8, weight: 14.8, "size": "", "date": "02/19/2010" },
+                { "id": 7, "name": "G", "age": 11, weight: 22, "size": "", "date": "02/19/2010" },
+                { "id": 8, "name": "H", "age": 11, weight: 22, "size": "", "date": "02/19/2010" },
+                { "id": 9, "name": "I", "age": 11, weight: 22, "size": "", "date": "02/19/2010" },
+
+                { "id": 10, "name": "J", "size": "", "date": "02/19/2010" },
+                { "id": 101, "name": "L", "size": "", "date": "02/19/2010" },
+                { "id": 102, "name": "M", "size": "", "date": "02/19/2010" },
+                { "id": 103, "name": "N", "size": "", "date": "02/19/2010" },
+                { "id": 104, "name": "O", "size": "", "date": "02/19/2010" },
+                { "id": 105, "name": "P", "size": "", "date": "02/19/2010" },
+                { "id": 106, "name": "Q", "size": "", "date": "02/19/2010" },
+                { "id": 107, "name": "R", "size": "", "date": "02/19/2010" }
+            ];
+            var i = 1;
+            var tg = $("#tg1").treegrid({
+                //url: 'treegrid_data1.ashx',
+                width: 1200,
+                height: 600,
+                rownumbers: true,
+                idField: 'id',
+                treeField: 'name',
+                parentField: "pid",
+                remoteSort: false,
+                pagination: true,
+                pageList: [2, 3, 5, 10, 20, 50, 100],
+                data: { total: 30, rows: data },
+                animate: true,
+                singleSelect: false,
+                frozenColumns: [[
+                    { field: "fk", checkbox: true, width: 60 },
+                    { title: "id", field: "id", width: 60 }
+                ]],
+                columns: [[
+                    { title: "Name", field: "name", width: 220, sortable: true, filter: "livebox", editor: "text", tooltip: true },
+                    { title: "Size", field: "size", width: 100, align: "right", editor: "text", tooltip: function (val, id, row) { return "Size:" + val; } },
+                    { title: "Age", field: "age", width: 160, align: "right", sortable: true, filter: "caps", editor: "text" },
+                    { title: "Weight", field: "weight", width: 160, align: "right", filter: "lower" },
+                    { title: "Date", field: "date", width: 150, sortable: true, filter: "checkbox" },
+                    { title: "操作", field: "opts", width: 150, filterable: false, formatter: function (index, row) {
+                        var id = row.id;
+                        var btn1 = $("<a></a>").linkbutton({ text: "编辑", iconCls: "icon-edit", plain: true }).attr({ name: "edit", onclick: "javascript: window.edit(" + id + ");" });
+                        var btn2 = $("<a></a>").linkbutton({ text: "删除", iconCls: "icon-remove", plain: true }).attr({ name: "remove", onclick: "javascript: window.deleteRow(" + id + ");" });
+                        var container = $("<div></div>").append(btn1).append(btn2);
+                        return container.html();
+                    }
+                    }
+                ]],
+                onBeforeEdit: function (row) {
+                    $.fn.treegrid.extensions.onBeforeEdit.apply(this, arguments);
+                    var id = row.id, dom = tg.treegrid("getCellDom", { field: "opts", id: id });
+                    dom.find("[name=edit]").attr("onclick", "javascript: window.endEdit(" + id + ")").find("span.l-btn-text").text("保存");
+                    dom.find("[name=remove]").attr("onclick", "javascript: window.cancelEdit(" + id + ")").find("span.l-btn-text").text("取消");
+                },
+                onAfterEdit: function (row) {
+                    $.fn.treegrid.extensions.onAfterEdit.apply(this, arguments);
+                    var id = row.id, dom = tg.treegrid("getCellDom", { field: "opts", id: id });
+                    dom.find("[name=edit]").attr("onclick", "javascript: window.edit(" + id + ")").find("span.l-btn-text").text("编辑");
+                    dom.find("[name=remove]").attr("onclick", "javascript: window.deleteRow(" + id + ")").find("span.l-btn-text").text("删除");
+                },
+                onCancelEdit: function (row) {
+                    $.fn.treegrid.extensions.onCancelEdit.apply(this, arguments);
+                    var id = row.id, dom = tg.treegrid("getCellDom", { field: "opts", id: id });
+                    dom.find("[name=edit]").attr("onclick", "javascript: window.edit(" + id + ")").find("span.l-btn-text").text("编辑");
+                    dom.find("[name=remove]").attr("onclick", "javascript: window.deleteRow(" + id + ")").find("span.l-btn-text").text("删除");
+                },
+                rowContextMenu: [
+                    {
+                        text: "增加子节点",
+                        handler: function (e, row) { tg.treegrid("append", { parent: row.id, data: [{ id: 10000 + i, name: (i++).toString()}] }); }
+                    },
+                    { text: "mm1", iconCls: "icon-ok", disabled: function () { return false; }, handler: function (e, row, eventData) { alert(row.name); } },
+                    { text: function (e, row, eventData) { return row.name; }, iconCls: "icon-search", handler: function (e, row, eventData) { } },
+                    { text: "导出excel", iconCls: "icon-save", handler: function (e, row, eventData) { } },
+                    { text: "设置列\"Name\"的标题", iconCls: "icon-edit", handler: function () { tg.treegrid("setColumnTitle", { field: "name", title: "测试列名称" }); } },
+                    { text: "设置列\"Size\"的宽度", iconCls: "icon-edit", handler: function () { tg.treegrid("setColumnWidth", { field: "size", width: 200 }); } }
+                ],
+                selectOnRowContextMenu: false,
+                pagingMenu: true,
+                moveMenu: true,
+                exportMenu: true,
+                enableRowContextMenu: true,
+                //toggleMenu: {submenu: false},
+                dndRow: true,
+                toggleOnClick: false,
+                onlyNodeExpand: false,
+                rowTooltip: false,
+                extEditing: true,
+                //cascadeCheck: true,
+                smooth: true,
+                //enableHighlightColumn: true,
+                columnFilter: { panelHeight: 100, position: "top"}//,
+                //onLoadSuccess: function () { $(this).treegrid("collapseAll"); },
+                //offset: { width: -300, height: -200 }
+            });
+
+            window.edit = function (id) {
+                tg.treegrid("beginEdit", id);
+            };
+
+            window.endEdit = function (id) {
+                tg.treegrid("endEdit", id);
+            };
+
+            window.cancelEdit = function (id) {
+                tg.treegrid("cancelEdit", id);
+            };
+
+            window.deleteRow = function (id) {
+                tg.treegrid("remove", id);
+            }
+
+            $("#Button1").click(function () { tg.treegrid("sort", { sortName: "date", sortOrder: "asc" }); });
+            $("#Button2").click(function () { tg.treegrid("sort", { sortName: "date", sortOrder: "desc" }); });
+
+            $("#Button3").click(function () { tg.treegrid("highlightColumn", "name"); });
+            $("#Button4").click(function () { tg.treegrid("highlightColumn", "date"); });
+
+            $("#Button5").click(function () { alert(tg.treegrid("getColumnData", "date").length); });
+            $("#Button6").click(function () { alert(tg.treegrid("getChildren", 1).length); });
+
+            $("#Button7").click(function () { alert(tg.treegrid("getRowIndex", 111)); });
+            $("#Button8").click(function () { tg.treegrid("check", { id: 111, cascade: true }); });
+
+            $("#Button9").click(function () { alert(tg.treegrid("getColumnDom", { field: "date", header: true }).length); });
+
+            $("#Button10").click(function () { alert(tg.treegrid("getColumns").length); });
+
+            $("#Button11").click(function () { alert(tg.treegrid("getDistinctRows", { field: "date", cascade: true }).length); });
+
+            $("#Button12").click(function () { var opts = tg.treegrid("options"); alert(opts.sortName + ":" + opts.sortOrder); });
+
+            $("#Button13").click(function () { tg.treegrid("remove", 11231); });
+
+            $("#Button14").click(function () { alert(tg.treegrid("find", 11231)); });
+
+            $("#Button15").click(function () { tg.treegrid("selectAll"); });
+            $("#Button16").click(function () { tg.treegrid("unselectAll"); });
+            $("#Button17").click(function () { tg.treegrid("checkAll"); });
+            $("#Button18").click(function () { tg.treegrid("uncheckAll"); });
+            $("#Button19").click(function () { tg.treegrid("select", { id: 1, cascade: true }); });
+            $("#Button20").click(function () { tg.treegrid("unselect", { id: 1, cascade: true }); });
+            $("#Button21").click(function () { tg.treegrid("check", { id: 1, cascade: true }); });
+            $("#Button22").click(function () { tg.treegrid("uncheck", { id: 1, cascade: true }); });
+
+            $("#Button23").click(function () { tg.treegrid("livesearch", { field: "", value: "1" }); });
+
+            $("#Button24").click(function () { tg.treegrid("move", { source: 1, target: 2, point: "bottom" }); });
+
+            $("#Button25").click(function () { alert(tg.treegrid("getParent", 11).name); });
+
+            $("#Button26").click(function () { alert(JSON.stringify(tg.treegrid("getData"))); });
+
+            $("#Button27").click(function () { alert(tg.treegrid("getNearChildren", 2).length); });
+
+            $("#Button28").click(function () { alert(tg.treegrid("getNears", 121).length); });
+
+            $("#Button29").click(function () { tg.treegrid("shift", { id: 21, point: "upLevel" }); });
+
+            $("#Button30").click(function () { var l = tg.treegrid("getChecked").length; alert(l); });
+
+            $("#Button31").click(function () { alert(tg.treegrid("isChecked", 2)); });
+            $("#Button32").click(function () { alert(tg.treegrid("isSelected", 3)); });
+
+            $("#Button33").click(function () { alert(tg.treegrid("getLevel", 123123)); });
+
+            $("#Button34").click(function () {
+                var source = $("#source").val(), target = $("#target").val(), point = $("#point").val();
+                tg.treegrid("moveColumn", { source: source, target: target, point: point });
+            });
+
+            $("#Button35").click(function () {
+                var field = $("#source").val(), point = $("#point").val();
+                tg.treegrid("shiftColumn", { field: field, point: point });
+            });
+
+            $("#Button36").click(function () { tg.treegrid("freezeColumn", $("#source").val()); });
+            $("#Button37").click(function () { tg.treegrid("unfreezeColumn", $("#source").val()); });
+
+            $("#Button38").click(function () { var data = tg.treegrid("getRoots"); alert(JSON.stringify(data)); });
+            $("#Button39").click(function () { var data = tg.treegrid("getData"); alert(JSON.stringify(data)); });
+        });
+    </script>
+</head>
+<body>
+    <h2>
+        jQuery EasyUI TreeGrid Extensions</h2>
+    <div class="demo-info" style="font-weight: bold;">
+        jQuery EasyUI TreeGrid Extensions
+    </div>
+    <input id="Button1" type="button" value="SortGridByDate-ASC" />
+    <input id="Button2" type="button" value="SortGridByDate-DESC" />
+    <input id="Button3" type="button" value="highlightColumn-Name" />
+    <input id="Button4" type="button" value="highlightColumn-Date" />
+    <input id="Button5" type="button" value="getColumnData-Date" />
+    <input id="Button6" type="button" value="GetChildren" />
+    <input id="Button7" type="button" value="GetRowIndex" />
+    <input id="Button8" type="button" value="CheckRow" />
+    <input id="Button9" type="button" value="GetColumnDom" />
+    <input id="Button10" type="button" value="GetColumns" />
+    <input id="Button11" type="button" value="getDistinctRows" />
+    <input id="Button12" type="button" value="GetSortParams" />
+    <input id="Button13" type="button" value="RemoveNode" />
+    <input id="Button14" type="button" value="GetNode" />
+    <hr />
+    <input id="Button15" type="button" value="selectAll" />
+    <input id="Button16" type="button" value="unselectAll" />
+    <input id="Button17" type="button" value="checkAll" />
+    <input id="Button18" type="button" value="uncheckAll" />
+    <input id="Button19" type="button" value="select" />
+    <input id="Button20" type="button" value="unselect" />
+    <input id="Button21" type="button" value="check" />
+    <input id="Button22" type="button" value="uncheck" />
+    <input id="Button23" type="button" value="livesearch" />
+    <input id="Button24" type="button" value="MoveNode" />
+    <input id="Button25" type="button" value="NextNode" />
+    <input id="Button26" type="button" value="GetData" />
+    <input id="Button27" type="button" value="getNearChildren" />
+    <input id="Button28" type="button" value="getNears" />
+    <input id="Button29" type="button" value="ShiftNode" />
+    <input id="Button30" type="button" value="GetChecked" />
+    <input id="Button31" type="button" value="IsChecked" />
+    <input id="Button32" type="button" value="IsSelected" />
+    <input id="Button33" type="button" value="GetLevel" />
+    <hr />
+    <input id="Button34" type="button" value="MoveColumn" />
+    <input id="Button35" type="button" value="ShiftColumn" />
+    <input id="Button36" type="button" value="FreezeColumn" />
+    <input id="Button37" type="button" value="UnFreezeColumn" />
+    <hr />
+    <input id="Button38" type="button" value="GetRoots" />
+    <input id="Button39" type="button" value="GetData" />
+    <hr />
+    source:
+    <input id="source" type="text" value="weight" />
+    target:
+    <input id="target" type="text" value="id" />
+    point:
+    <input id="point" type="text" value="before" />
+    <hr />
+    <div id="tg1">
+    </div>
+</body>
+</html>

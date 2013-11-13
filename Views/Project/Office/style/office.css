@@ -1,0 +1,40 @@
+﻿.tablecss
+{
+    font-size: 12px; 
+    border-collapse:collapse;
+}
+.tablecss tr
+{
+    height:25px;
+}
+.tablecss td
+{
+    border-style:solid;
+    border-color:#000;
+    border-width:1px;
+}
+.tdLeft
+{
+    background-color:#F0F0F0;
+    text-align:center;
+    }
+.btnOffice 
+{
+    background-image:url(../image/officebtn.jpg);
+    background-repeat: repeat-x; 
+    border:#a5b6d2 1px solid;
+    padding:2px;
+    text-align:center;
+    margin:1px;
+    width:100px;
+    height:25px;
+    font-size: 12px; 
+    vertical-align: middle;
+    cursor: pointer; 
+    text-decoration: none; 
+}
+.in
+{
+    width:50%;     
+    border:none;
+}

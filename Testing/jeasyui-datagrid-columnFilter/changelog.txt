@@ -1,0 +1,84 @@
+﻿jEasyui.Extensions.DataGrid 发布及更新日志
+
+/******************** 2013-07-24(1.2.2 release) ********************/
+1、修复了 easyui-datagrid 在行拖动功能启用的情况下，对某行执行 beginEdit 方法后，该行上的 editors 无法获取到焦点进行编辑的 bug；
+2、修复了 easyui-datagrid 在行拖动功能启用的情况下，对冻结行进行拖动或放置时存在的 bug；
+3、修复了 easyui-datagrid 在启用 columnFilter 但没有数据的情况下，第一次渲染后没有 columnFilter 组件以及排序后会报错的 bug；
+4、调表头右键菜单和行右键菜单的显示逻辑，让 disabled: true 的顶级菜单不显示；
+5、增加了部分自定义方法 moveColumn、shiftColumn、freezeColumn、unfreezeColumn 等；
+6、增加了部分自定义属性例如 rowTooltip、autoEditing、extEditing 等；
+
+
+/******************** 2013-07-13(1.2.1 release) ********************/
+1、重写了部分 easyui-datagrid 的原生方法，以支持相应扩展的属性、方法和事件等功能；
+2、增加了部分自定义扩展方法 isChecked、isSelected、moveRow、shiftRow、nextRow、prevRow、popRow、
+        enableRowDnd、disableRowDnd、nextColumn、prevColumn、deleteColumn、popColumn、livesearch；
+3、增加了部分自定义扩展属性 moveMenu、pageSubmenu、dndRow；
+4、增加了部分自定义扩展事件 onBeforeDrop、onDrop、onBeforeDrag、onStartDrag、onStopDrag、onDragEnter、onDragOver、onDragLeave、
+        onBeforeUpdateRow、onUpdateRow、onBeforeAppendRow、onAppendRow、onBeforeInsertRow、onBeforeRow；
+5、对列过滤器组件的配置属性 columnFilter 的参数格式进行了部分调整，使之具备更强大的功能；
+6、实现了行数据的拖动排序功能；
+
+
+/******************** 2013-07-03(1.2.0 beta) ********************/
+1、基于 1.1.6 release，重新设计了大部分功能的实现方式，调整了代码结构，并重写了大量代码；
+2、增加了部分自定义扩展方法 getDistinctRows、getDistinctColumnData、getColumns、getHiddenColumns、getVisibleColumns、getHiddenColumnFields、getVisibleColumnFields、showRow、hideRow、showRows、hideRows、getHiddenRows、getVisibleRows；
+3、增加了部分自定义扩展属性 autoBindDblClickRow、dblClickRowMenuIndex；
+4、增加了列的部分自定义扩展属性 filterable、hidable、filter、precision、step；
+5、对列过滤器组件的配置属性 columnFilter 的参数格式进行了部分调整；
+6、清除了所有的菜单图标（因现阶段在对图标方案进行调整，包含图标的版本敬待后续版本发布）。
+
+
+/******************** 2013-06-25(1.1.6 release) ********************/
+1、基于 1.1.5 release，修复部分 bug，并且完善部分用于体验性能。
+2、优化部分代码；
+
+
+/******************** 2013-06-09(1.1.5 release) ********************/
+1、基于 1.1.4 release，修复部分 bug，并且完善部分用于体验性能。
+2、调整了部分表头右键菜单的事件响应方式（"显示/隐藏列" 和 "过滤/显示" 子菜单项点击后，不会立即自动隐藏，方便多次点击操作）；
+3、增加了自定义扩展属性 headerContextMenu、rowContextMenu 数组元素中项目的 hideOnClick 属性；该属性表示点击该菜单项后整个菜单是否会自动隐藏；Boolean 类型，默认为 true。
+
+
+/******************** 2013-06-06(1.1.4 release) ********************/
+1、基于 1.1.3 release，修复部分 bug，并且完善部分用于体验性能。
+2、修正了本地排序后过滤器组件效果会重新显示所有行数据的问题；
+3、增加了自定义列属性 hidable，该属性表示是否该列是否可隐藏；Boolean 类型值，默认为 true。；
+
+
+/******************** 2013-06-05(1.1.3 release) ********************/
+1、基于 1.1.2 release，修复部分 bug，并且完善部分用于体验性能。
+2、增加了扩展方法 setColumnWidth；用于设置 easyui-datagrid 中列的宽度
+3、增加了扩展方法 getColumnDom；获取 easyui-datagrid 中当前页指定列的 DOM-jQuery 元素对象
+4、增加了扩展方法 getColumnData；获取 easyui-datagrid 中当前也指定列所有行的单元格数据所构成的一个数组
+5、增加了扩展方法 highlightColumn；使当前 easyui-datagrid 中指定的列 DOM 对象高亮显示
+6、增加了扩展属性 enableHighlightColumn；增加 easyui-datagrid 的自定义扩展属性，该属性表示是否启用自动高亮显示列的功能
+
+
+/******************** 2013-06-03(1.1.2 release) ********************/
+1、基于 1.1.1 release，修复部分 bug，并且完善部分用于体验性能。
+2、增加了自定义属性 singeSelectOnRowContextMenu，该属性表示是否启用 "当右键单击行数据时清除所有 check 和 select 选择的行数据并选择右键单击行" 的功能，默认为 true；
+3、增加了自定义属性 hideDisabledMenu，该属性表示是否启用 "当右键(表头右键或行右键)点击时弹出的菜单项，如果是 disabled: true ，则不显示" 的功能，默认为 false；
+
+
+/******************** 2013-06-03(1.1.1 release) ********************/
+1、基于 1.1.0 release，修复部分 bug，并且完善部分用于体验性能。
+2、增加了自定义列属性 disabledFilter，该属性表示是否禁用该列表头右键菜单中的 "过滤/显示" 菜单项；
+3、扩展属性 columnFilter 的 columns 数组属性中，元素的属性 type，增加了选项 "none"，该值表示该列不启用过滤器组件面板。
+
+
+/******************** 2013-06-03(1.1.0 release) ********************/
+1、1.1.0 正式版本发布；
+2、基于 1.0.1 beta，修复部分 bug，并且完善部分用于体验性能。
+
+
+/******************** 2013-05-31(1.0.1 beta) ********************/
+1、初始版本发布；
+2、扩展 easyui-datagrid 插件的功能，使其
+    A、支持表头右键、行右键菜单的直接生成创建，并设置默认的菜单项；
+    B、增加部分扩展方法和扩展属性；
+    C、依据与增加的扩展方法和扩展属性，实现部分扩展功能，包括：
+        使 easyui-datagrid 控件自动动态适应浏览器大小（非 fit 属性控制）；
+        增加表头过滤器 UI 组件并实现效果
+
+

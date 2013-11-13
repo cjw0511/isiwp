@@ -1,0 +1,9 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/AjaxPage.Master" AutoEventWireup="true" CodeBehind="InnerAjaxPage.Master.cs" Inherits="ISIWP.Platform.WebClient.InnerAjaxPage" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentHead" runat="server">
+    <asp:ContentPlaceHolder ID="ContentHead" runat="server" />
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentBody" runat="server">
+    <div id="<%= this.AjaxContainerID %>" class="easyui-panel" data-options="noheader: true, border: false, fit: true" >   
+        <asp:ContentPlaceHolder ID="ContentBody" runat="server" />
+    </div>
+</asp:Content>
